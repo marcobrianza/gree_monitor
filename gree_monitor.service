@@ -1,0 +1,20 @@
+[Unit]
+Description=gree_monitor
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=gree-monitor
+Group=gree-monitor
+Type=simple
+WorkingDirectory=/opt/gree_monitor
+ExecStart=/opt/gree_monitor/.venv/bin/python -u /opt/gree_monitor/gree_monitor.py
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=150
+NoNewPrivileges=true
+PrivateTmp=true
+Environment=PYTHONDONTWRITEBYTECODE=1
+
+[Install]
+WantedBy=multi-user.target

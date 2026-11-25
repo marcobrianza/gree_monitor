@@ -1,0 +1,49 @@
+{
+  "device": "gree_main",
+  "site": "lozza",
+  "csv": "registri_gree.csv",
+  "categories": [
+    "installation",
+    "runtime",
+    "telemetry",
+    "legacy"
+  ],
+  "modbus": {
+    "mode": "tcp",
+    "host": "192.168.13.32",
+    "tcp_port": 502,
+    "address": 1,
+    "serial_port": "/dev/ttyUSB0",
+    "baud": 9600,
+    "timeout_seconds": 1.5,
+    "request_pause_seconds": 0.1
+  },
+  "mqtt": {
+    "host": "192.168.13.13",
+    "port": 1883,
+    "username": "mqtt-user",
+    "password_file": "secrets/mqtt.json",
+    "topic": "lozza/gree/main/telemetry",
+    "timeout_seconds": 10,
+    "retain": true,
+    "enabled": false
+  },
+  "state_dir": "state",
+  "max_scan_seconds": 120,
+  "profiles": "profiles.json",
+  "selection": {
+    "profile": "monitoring",
+    "keys": [],
+    "exclude": []
+  },
+  "web": {
+    "host": "127.0.0.1",
+    "port": 8767
+  },
+  "poll_seconds": 60,
+  "influx": {
+    "enabled": false,
+    "url": "http://127.0.0.1:8086",
+    "database": "lozza"
+  }
+}
