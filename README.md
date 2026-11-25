@@ -15,6 +15,10 @@ Companion projects: [Deye Monitor](https://github.com/marcobrianza/deye_monitor)
 
 The Python process polls a Gree heat pump through a Modbus TCP gateway or an RS-485 adapter. The CSV register map and JSON profiles define what to read. It serves the dashboard at `/gree`, queues supported setpoint changes, and verifies writes by reading the setting back. It can record telemetry directly in InfluxDB and publish the same telemetry to MQTT. The dashboard has no authentication. Only expose the control interface on a trusted LAN or private VPN.
 
+## Modbus references
+
+See [Modbus register references](MODBUS_REFERENCES.md) for the source versions, original links and SHA-256 checksums.
+
 ## Run locally
 
 ```sh
